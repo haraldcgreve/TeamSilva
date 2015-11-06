@@ -37,7 +37,7 @@ namespace ImgLatLong.Controllers
             {
                 EventName = "Hackney Empire Charity Concert",
                 Latitude = 51.5333,
-                Longitude = 0.0833,
+                Longitude = -0.0833,
                 LocationName = "Hackney, London"
             });
 
@@ -45,7 +45,7 @@ namespace ImgLatLong.Controllers
             {
                 EventName = "Wimbledon Tennis Tournament",
                 Latitude = 51.4235,
-                Longitude = 0.2171,
+                Longitude = -0.2171,
                 LocationName = "Wimbledon"
             });
 
@@ -53,7 +53,7 @@ namespace ImgLatLong.Controllers
             {
                 EventName = "Hyde Park Softball Tournament",
                 Latitude = 51.5086,
-                Longitude = 0.1636,
+                Longitude = -0.1636,
                 LocationName = "Hyde Park, London"
             });
 
@@ -61,8 +61,24 @@ namespace ImgLatLong.Controllers
             {
                 EventName = "Wembley Charity Football Match",
                 Latitude = 51.5560,
-                Longitude = 0.3042,
+                Longitude = -0.3042,
                 LocationName = "Wembley Stadium"
+            });
+
+            _events.Add(new PinModel
+            {
+                EventName = "Woking Half Marathon",
+                Latitude = 51.3162,
+                Longitude = -0.5610,
+                LocationName = "Woking, Surrey"
+            });
+
+            _events.Add(new PinModel
+            {
+                EventName = "Olympic Park 10K Run",
+                Latitude = 51.5462,
+                Longitude = -0.0127,
+                LocationName = "Olympic Park, Stratford"
             });
 
             return _events;
