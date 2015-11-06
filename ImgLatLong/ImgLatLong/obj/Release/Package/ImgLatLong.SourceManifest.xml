@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <sitemanifest>
-  <IisApp path="C:\Support\ImgLatLong\ImgLatLong\ImgLatLong\obj\Release\Package\PackageTmp" />
-  <setAcl path="C:\Support\ImgLatLong\ImgLatLong\ImgLatLong\obj\Release\Package\PackageTmp" setAclResourceType="Directory" />
-  <setAcl path="C:\Support\ImgLatLong\ImgLatLong\ImgLatLong\obj\Release\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
+  <IisApp path="C:\TeamSilva\ImgLatLong\ImgLatLong\obj\Release\Package\PackageTmp" />
+  <setAcl path="C:\TeamSilva\ImgLatLong\ImgLatLong\obj\Release\Package\PackageTmp" setAclResourceType="Directory" />
+  <setAcl path="C:\TeamSilva\ImgLatLong\ImgLatLong\obj\Release\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
 </sitemanifest>
