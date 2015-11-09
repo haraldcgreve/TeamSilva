@@ -59,14 +59,6 @@ namespace ImgLatLong.Controllers
 
             _events.Add(new PinModel
             {
-                EventName = "Wembley Charity Football Match",
-                Latitude = 51.5560,
-                Longitude = -0.3042,
-                LocationName = "Wembley Stadium"
-            });
-
-            _events.Add(new PinModel
-            {
                 EventName = "Woking Half Marathon",
                 Latitude = 51.3162,
                 Longitude = -0.5610,
@@ -79,6 +71,14 @@ namespace ImgLatLong.Controllers
                 Latitude = 51.5462,
                 Longitude = -0.0127,
                 LocationName = "Olympic Park, Stratford"
+            });
+
+            _events.Add(new PinModel
+            {
+                EventName = "Dover Charity Sailing Event",
+                Latitude = 51.1295,
+                Longitude = 1.3089,
+                LocationName = "Dover, Kent"
             });
 
             return _events;

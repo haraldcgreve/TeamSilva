@@ -10,6 +10,7 @@ var mapModule = (function() {
 
   var init = function() {
     initMap();
+    populateMarkers();
     getLocation();
     eventHandlers();
   }
@@ -64,15 +65,41 @@ var mapModule = (function() {
 
     introCta.on('click', function() {
       introPanel.fadeOut(800, function() {
-        map.panTo(new L.LatLng(currentLat, currentLng), {animate: true, duration: 4, zoom: 13});
+        map.panTo(new L.LatLng(currentLat, currentLng), {animate: true, duration: 1, zoom: 13});
         $('.logo img').css({'-webkit-filter': 'grayscale(0)'});
         // setTimeout(function(){ populateMarkers(); }, 2000);
-        populateMarkers();
       });
     });
 
-    $('.leaflet-clickable').on('click', function() {
+    $('.close').on('click', function() {
+      $('.gallery-panel').fadeOut(800, function(){
+        $('.gallery').slick('unslick');
+      });
 
+    });
+  }
+
+  var getImages = function() {
+    var location = this.getLatLng();
+    var url = 'http://teamsilva.azurewebsites.net/Images/GetImageJsonForLatLng?lat=' + location.lat + '&lng=' + location.lng;
+
+    $.ajax({
+      url: url,
+    }).done(function(data) {
+
+      $('.gallery-panel').fadeIn(800).append(data);
+      var images = data.ImageList;
+      console.log(images);
+      var markup;
+
+      for (i=0; i < images.length; i++) {
+        markup += '<div><img src="' + images[i].ImageUrl + '" /><p>' + images[i].Name + '</div>';
+      }
+
+      $('.gallery').html(markup).slick({
+        prevArrow: '<span class="slick-prev slick-arrow">&lsaquo;</span>',
+        nextArrow: '<span class="slick-next slick-arrow">&rsaquo;</span>',
+      });
     });
   }
 
@@ -80,12 +107,12 @@ var mapModule = (function() {
     $.ajax({
       url: 'http://teamsilva.azurewebsites.net/Images/GetEventDataJson',
     }).done(function(data) {
-      console.log(data);
-      var imageList = ImageList.ImageList;
+
+      var imageList = data;
 
       for (i=0; i < imageList.length; i++) {
         var marker = L.marker([imageList[i].Latitude, imageList[i].Longitude])
-        marker.addTo(map);
+        marker.addTo(map).on('click', getImages);
       }
     });
 
@@ -98,39 +125,3 @@ var mapModule = (function() {
 })();
 
 mapModule.init();
-
-var ImageList = {
-  "ImageList":[
-    {
-      "ImageUrl":"https://scontent.cdninstagram.com/hphotos-xpf1/t51.2885-15/s320x320/e35/11875507_1653712601567733_556205717_n.jpg",
-      "Latitude":51.4874013,
-      "Longitude":-0.124641122,
-      "Name":"89 Albert Embankment, Vauxhall"
-    },
-    {
-      "ImageUrl":"https://scontent.cdninstagram.com/hphotos-xpf1/t51.2885-15/s320x320/e35/11849882_842178569233812_2050902676_n.jpg",
-      "Latitude":51.4874013,
-      "Longitude":-0.124641122,
-      "Name":"89 Albert Embankment, Vauxhall"
-    },
-    {
-      "ImageUrl":"https://scontent.cdninstagram.com/hphotos-xft1/t51.2885-15/s320x320/e35/12063263_1508716202756008_1990820026_n.jpg",
-      "Latitude":51.4903,
-      "Longitude":-0.1193,
-      "Name":"Vauxhall"
-    },
-    {
-      "ImageUrl":"https://scontent.cdninstagram.com/hphotos-xap1/t51.2885-15/s320x320/e35/10848481_509297382579373_468583301_n.jpg",
-      "Latitude":51.4874013,
-      "Longitude":-0.124641122,
-      "Name":"89 Albert Embankment, Vauxhall"
-    },
-    {
-      "ImageUrl":"https://scontent.cdninstagram.com/hphotos-xfp1/t51.2885-15/s320x320/e35/11917880_137934793230197_1594623928_n.jpg",
-      "Latitude":51.4903,
-      "Longitude":-0.1193,
-      "Name":"Vauxhall"
-    }
-  ],
-  "Message":null
-}
