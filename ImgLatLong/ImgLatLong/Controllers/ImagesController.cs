@@ -33,45 +33,45 @@ namespace ImgLatLong.Controllers
                 LocationName = "89 Albert Embankment, London"
             });
 
-            _events.Add(new PinModel
-            {
-                EventName = "Hackney Empire Charity Concert",
-                Latitude = 51.5333,
-                Longitude = -0.0833,
-                LocationName = "Hackney, London"
-            });
+            //_events.Add(new PinModel
+            //{
+            //    EventName = "Hackney Empire Charity Concert",
+            //    Latitude = 51.5333,
+            //    Longitude = -0.0833,
+            //    LocationName = "Hackney, London"
+            //});
 
-            _events.Add(new PinModel
-            {
-                EventName = "Wimbledon Tennis Tournament",
-                Latitude = 51.4235,
-                Longitude = -0.2171,
-                LocationName = "Wimbledon"
-            });
+            //_events.Add(new PinModel
+            //{
+            //    EventName = "Wimbledon Tennis Tournament",
+            //    Latitude = 51.4235,
+            //    Longitude = -0.2171,
+            //    LocationName = "Wimbledon"
+            //});
 
-            _events.Add(new PinModel
-            {
-                EventName = "Hyde Park Softball Tournament",
-                Latitude = 51.5086,
-                Longitude = -0.1636,
-                LocationName = "Hyde Park, London"
-            });
+            //_events.Add(new PinModel
+            //{
+            //    EventName = "Hyde Park Softball Tournament",
+            //    Latitude = 51.5086,
+            //    Longitude = -0.1636,
+            //    LocationName = "Hyde Park, London"
+            //});
 
-            _events.Add(new PinModel
-            {
-                EventName = "Woking Half Marathon",
-                Latitude = 51.3162,
-                Longitude = -0.5610,
-                LocationName = "Woking, Surrey"
-            });
+            //_events.Add(new PinModel
+            //{
+            //    EventName = "Woking Half Marathon",
+            //    Latitude = 51.3162,
+            //    Longitude = -0.5610,
+            //    LocationName = "Woking, Surrey"
+            //});
 
-            _events.Add(new PinModel
-            {
-                EventName = "Olympic Park 10K Run",
-                Latitude = 51.5462,
-                Longitude = -0.0127,
-                LocationName = "Olympic Park, Stratford"
-            });
+            //_events.Add(new PinModel
+            //{
+            //    EventName = "Olympic Park 10K Run",
+            //    Latitude = 51.5462,
+            //    Longitude = -0.0127,
+            //    LocationName = "Olympic Park, Stratford"
+            //});
 
             _events.Add(new PinModel
             {
